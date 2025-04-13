@@ -1,0 +1,75 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="horse_riding_school.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="#FFF1E4">
+
+    <Grid RowDefinitions="*,Auto" Padding="30">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Spacing="25">
+                <Image Source="logo.png" HeightRequest="130" />
+
+                <Border StrokeShape="RoundRectangle 25"
+                        BackgroundColor="#BAD4FF"
+                        Padding="0"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="FillAndExpand">
+                    <Grid ColumnDefinitions="*,*" HeightRequest="40">
+                        <Label Text="Sign Up"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="Gray"
+                               Grid.Column="0" />
+
+                        <Label Text="Sign In"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="Black"
+                               BackgroundColor="White"
+                               Grid.Column="1" />
+                    </Grid>
+                </Border>
+
+                <Border Padding="2" BackgroundColor="WhiteSmoke">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="25"/>
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout>
+                        <Image Source="user_icon.png" HeightRequest="40" WidthRequest="40" />
+                        <Entry Placeholder="USERNAME"
+                               x:Name="UsernameEntry"
+                               TextColor="Black"
+                               PlaceholderColor="Gray"
+                               Margin="10,0" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <Border Padding="2" BackgroundColor="WhiteSmoke">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="25" />
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout>
+                        <Image Source="lock_icon.png" HeightRequest="40" WidthRequest="40" />
+                        <Entry Placeholder="PASSWORD"
+                               x:Name="PasswordEntry"
+                               IsPassword="True"
+                               TextColor="Black"
+                               PlaceholderColor="Gray"
+                               Margin="10,0" />
+                    </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="LOGIN"
+                BackgroundColor="#FFA500"
+                TextColor="White"
+                CornerRadius="25"
+                HeightRequest="50"
+                Grid.Row="1"
+                Margin="0,20" />
+    </Grid>
+</ContentPage>
