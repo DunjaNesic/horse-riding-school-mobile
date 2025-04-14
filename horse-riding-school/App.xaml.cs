@@ -1,7 +1,10 @@
-﻿namespace horse_riding_school
+﻿using horse_riding_school.Models;
+
+namespace horse_riding_school
 {
     public partial class App : Application
     {
+        public static User _user;
         public App()
         {
             InitializeComponent();

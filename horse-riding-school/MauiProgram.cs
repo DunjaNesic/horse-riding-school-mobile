@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using horse_riding_school.ViewModels;
+using horse_riding_school.Views;
+using Microsoft.Extensions.Logging;
 
 namespace horse_riding_school
 {
@@ -15,8 +17,14 @@ namespace horse_riding_school
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<LoginPageViewModel>();
+
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

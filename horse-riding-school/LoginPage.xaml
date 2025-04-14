@@ -1,5 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:horse_riding_school.ViewModels"
+             x:DataType="viewmodel:LoginPageViewModel"
              x:Class="horse_riding_school.LoginPage"
              Title="LoginPage"
              BackgroundColor="#FFF1E4">
@@ -39,8 +41,10 @@
                     </Border.StrokeShape>
                     <HorizontalStackLayout>
                         <Image Source="user_icon.png" HeightRequest="40" WidthRequest="40" />
-                        <Entry Placeholder="USERNAME"
-                               x:Name="UsernameEntry"
+                        <Entry Placeholder="EMAIL"
+                               x:Name="EmailEntry"
+                               Text="{Binding Email}"
+                               WidthRequest="130"
                                TextColor="Black"
                                PlaceholderColor="Gray"
                                Margin="10,0" />
@@ -55,6 +59,8 @@
                         <Image Source="lock_icon.png" HeightRequest="40" WidthRequest="40" />
                         <Entry Placeholder="PASSWORD"
                                x:Name="PasswordEntry"
+                               Text="{Binding Password}"
+                               WidthRequest="130"
                                IsPassword="True"
                                TextColor="Black"
                                PlaceholderColor="Gray"
@@ -65,6 +71,7 @@
         </ScrollView>
 
         <Button Text="LOGIN"
+                Command="{Binding LoginCommand}"
                 BackgroundColor="#FFA500"
                 TextColor="White"
                 CornerRadius="25"
